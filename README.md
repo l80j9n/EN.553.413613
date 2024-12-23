@@ -1,66 +1,105 @@
 java c
-Applied Stats and Data Analysis 
-EN.553.413-613, Fall 2024 
-Oct 3rd, 2024 
-Exam 1 
-Question 2 (20 pts). The following TRUE/FALSE questions concern the Simple Linear Regression model
-Yi = β0 + β1Xi + εi, E(εi) = 0, V ar(εi) = σ2, cov(εi, εj ) = 0, for i ≠ j.
-(a) TRUE or FALSE. Yi and εj are uncorrelated for i ≠ j.
-(b) TRUE or FALSE. Denote b0 as the least squares estimator for β0 and βˆ0 as some unbiased estimator for β0. The variance of b0 is smaller or equal than the variance of βˆ0.
-(c) TRUE or FALSE. If the least squares estimator for β1 is 0, X and Y are not linearly related.
-(d) TRUE or FALSE. Semi-studentized residual vs Xi plot can be used to find outliers.
-(e) TRUE or FALSE. P ni=1 εi = 0.
-(f) TRUE or FALSE. Variance stabilizing transform. can be used to transform. X.
-(g) TRUE or FALSE. P ni=1 Yˆi(Yi − Yˆi) = 0.
-(h) TRUE or FALSE. Using Working-Hotelling procedure to find joint confidence interval for mean response at Xh1 = 3 with three other points will give the same confidence interval for EYh1 comparing to joint confidence interval for mean response at Xh1 = 3 with ten other points.
-(i) TRUE or FALSE. In the Correlation model of regression predictor Xi’s and the response variable Yi are both normal random variables.
-(j) TRUE or FALSE. Var(ei) = σ2for all i.
-Question 3 (15 pts). Let X1, X2, X3 ∼ iid N(0, 1), i.e. they are independent, identically distributed standard normal random variables. Let Y ∼ N(2, 1) and Y is independent on X1, X2, X3. For the following random variables state whether they follow a normal distribution, a t- distribution, a χ2 distribution, an F distribution, or none of the above. State relevant parameters (e.g. degrees of freedom, and means and variances for normal RVs)
+Applied   Stats   and   Data   Analysis
+EN.553.413-613
+Practice   Midterm   2
+Question   1.   Consider   the   linear   model
+Y   = Xβ +   ε   ,where Y is an-by-1 vector of   response variables, X is ann-by-p design matrix,   β   is   a   p-by-1   vector   of   coefficients,   ε   is   a   multivariate   normal   Nn   (0,σ2In   ).   Denote   by   b   the   least-squares   estimate   of β   .
+(a)   Write   down   the   formula   for   the   least-squares   estimate   for   the   regression   vector   b   in   terms   of matrices   X,   Y.   You   don’t   need   to   derive   it.
+(b)   What   is the   distribution   of b?    Specify the   corresponding   mean   and vari-   ance   covariance   matrix.   You   don’t   need   to   derive   it.
+(c)   Write   down   normal   equations   in   the   matrix   form.   You   don’t   need   to   de-   rive   them.
+(d)   Write   SSE   ,    SSR,    SSTo   in   the   matrix   form,    using   matrices   Y   ,   H,   J.   Specify   degrees   of   freedom   for   each   sum   of   squares.    You    don’t   need   to   derive   anything   here.
+(e)   What   are   the   conditions   on   matrix   X   such   that   XTX   is   invertible?   You don’t   need   to   prove   anything   here.(f)   Compute   the   covariance   matrix   Cov(b,   Y(ˆ)).      Show   your   steps   and   sim-plify.   Your   answer   should   be   expressed   in terms   of X   and   σ   2    only.    What are   the   dimensions   of the   matrix   Cov(b,   Y(ˆ))?Question   2.   Consider   the   following   plots   of   data   points   in   the   XY   plane,   where   X    is   the   predictor   variable   and   Y   is   the   response   variable.       Points   in   the   parallelogram   (slanted   box)   represent   evenly   distributed   data   points.   The   ‘o’   represent   unusual   observations.
+(i)   For each of the plots   (A),   (B),   (C) and   (D) describe whether the unusual   observation/s is   an   ‘outlier   with   respect   to   X   ’, or   an   ‘outlier   with   respect   to   Y   ’,   or   an   ‘outlier   with   respect   to   X   and   Y   ’,   or   none   of   the   above.
+(ii)   Internally   studentized   residuals   (ISR),   externally   studentized   residuals   (ESR),   and   leverage   are   common   diagnostic   tools   to   idenify   unusual   observations.   Which of   the three tools are more likely to identify unusual   observation   in   each   of   the   four   cases   (A),   (B),   (C)   and   (D).   List   best   two   diagnostic   tools   for   each   case.
+Question   3.   Suppose   Yi      follows   the   model
+Yi   = β1Xi1   +   β2Xi2   +   εiwhere   εi    is   independent,   identically   distributed   and   normal   with   mean   zero   and variance   σ   2   .   There is   NO   INTERCEPT TERM.   The   graph   below   shows   the individual 95% CI for β1      (horizontal   axis)   and   the   95%   CI   for   β2      (vertical   axis),   and   the   95%   confidence   region   for   the   overall   model   fit   F-test    (the   ellipse).    Locations   A,   B   and   C   are   possible   locations   where   the   origin   (0,   0)   could   be   located.   
 
-Question 4 (20 pts). Suppose a data set {(Xi, Yi) : 1 ≤ i ≤ n} is fit to a linear model of the form.
-Yi = β0 + β1xi + εi
-where εi are independent, mean zero, and normal with common variance σ2. Here we treat Y as the response variable and X as the predictor variable. The output of the lm function is given. Some values are hidden by ‘XXXXX’. We provide you with additional value: X¯ = 1.11.
+(a)   For   each   of the   points   A,   B,   C   state   whether
+●   β1    is   significant   OR   nonsignificant,
+●   β2    is   significant   OR   nonsignificant,
+●   overall   model   fit   is   significant   OR   nonsignificant.
+You   need   to   write   three   statements   for   each   point   A,   B   and   C!
+(b)   What   should   be   the   conditions   on   predictors   X1    and   X2    such   that   case   B   is   much   more   common   than   case   A.   Briefly   explain.
+
+Question   4.   Suppose   we   wish   to   understand   how   blood   pressure,   Y   ,   in   a   certain   population   depends   on   the   patient   age   and   patient   asthma   status   (asthmatic   or   nonasthmatic).      Let   X1      be   a   patient’s   age   in   years,   and   X2   the   asthma   status.   Note   that   X2    is   a   qualitative   variable,   and   X2    is   1   if the   patient   is   asthmatic   and X2    is   0 if the patient   is   nonasthmatic.    Consider the   second-order interaction   model
+Y = β0   +   β1X1   +   β2X2   +   β3X1(2)   +   β4X1X2   +   β5X1(2)X2   +   ε
+where,   again,   ε   is   a   normally   distributed   random   variable   with   mean   0   and   constant   variance   σ   2   .
+(a)   Compute   the   blood   pressure   for   non-asthmatics   in   terms   of   X1   ,   the   age   in   years,   and   some   or   all   of   the   coefficients   β0   ,β1   ,β2   ,β3   ,β4      and   β5   .   Your   answer   to   this   part   should   NOT   have   any   numbers   in   it–it   should   be   entirely   in   terms   of X1    and   the   coefficients   βi.(b)   Suppose   we   are   given   the   following   regression   output   (note:    x1       :   x2      de-
+no代 写EN.553.413-613 Applied Stats and Data Analysis Practice Midterm 2
+代做程序编程语言tes   the   product   term   X1X2   ;   similarly   (x1   )2    : x2      stands   for   X1(2)X2   ):
 Coefficients:
-Estimate Std. Error t value Pr(>|t|)
-(Intercept) 0.9088 0.4791 1.897 0.0724
-x 1.7480 0.7385 XXXXX 0.0281
+
+
+                                Estimate Std. Error t value Pr(>|t|)
+(Intercept) 4.5094 42.2371 0.107 0.9155
+x_1 6.3940 5.7774 1.107 0.2752
+x_2 -50.8539 56.2080 -0.905 0.3712
+x_1^2 0.1318 0.1687 0.781 0.4394
+x_1:x_2 17.0645 7.1011 2.403 0.0211
+(x_1)^2:x_2 -0.5025 0.1992 -2.522 0.0158
 ---
-Residual standard error: 1.088 on 20 degrees of freedom
-Multiple R-squared: XXXXXX,Adjusted R-squared: XXXXXX
-F-statistic: 5.602 on XX and XX DF, p-value: XXXXXX
-(a) How many data points are there (what is n, the sample size)? What is the estimated mean of the response variable Y at Xh = 1 for this dataset?
-(b) Based on all of this output, do you reject H0 : β1 = 0 in favour of Ha : β1 = 0 at level α = 0.01 significance? Why? What does the test tell us about the relationship between X and Y ?
-(c) Based on all of this output, do you reject the H0 : β1 = 0 vs Ha : β1 > 0 at level α = 0.01 significance? Briefly explain why, or why not.
-(d) The degrees of fr代 写EN.553.413-613, Fall 2024 Applied Stats and Data Analysis Exam 1Statistics
-代做程序编程语言eedom, and the p-value of the F statistic are hidden. Is it possible to reconstruct all of them based on the data shown? Recover as many values as you can.
-(e) Find MSE and Sxx =Pni=1(Xi − X¯)2 based on the data above
-(f) Is it possible to find the coefficient of simple determination from the data shown? If yes, do it. If not, briefly explain why.
-Question 5 (15 pts). Consider the following diagnostic plots for Model 1 and Model 2. Two simple linear regression models Y = β0 + β1X + ε are fitted to the two different datasets (X, Y ). For each model 3 diagnostic plots are shown: plot of Yi vs Xi, plot of semi-studentized residuals e*i versus fitted values Yˆi, QQ-plot of the semi-studentized residuals e*i.
 
-(a) What is the main issue do you diagnose with the Model 1, if any? Why? Which plot was the most useful in diagnosing this problem? Be as specific in describing the issue as you can.
-(b) What is the main issue do you diagnose with the Model 2, if any? Why? Which plot was the most useful in diagnosing this problem? Be as specific in describing the issue as you can.
-(c) This question is unrelated to the above plots. Assume that you conclude that in the model the errors are not normally distributed. How does this affect your inference on b1? Briefly justify.
-Question 6 (30 points). For the dataset of n = 100 observations a simple linear regression model Yi = β0 + β1Xi + εiis fit. The following estimates are obtained.
-
-Above, ni, ki are some functions of Xi. We have listed additional information here
-
-(a) Find niin terms of Xi. Show your work. You may use the least-squares solution formulas for b0, b1.
-(b) Prove Var  Hint: You may use the fact that 
-(c) What is the estimated variance s2 of the error term based on the data above?
-(d) Find a 99% confidence interval for β0. Write it in the form. A ± B · t(C, D), compute values of A, B, C, D if possible.
-(e) Find the joint confidence intervals with confidence at least 99% for β0, β1 in the form. Ai±Bi·t(Ci, Di). Compute values of Ai, Bi, Ci, Diif possible. Without any computation how does the interval for β0 for this part compare to the one in part (d)?
-(f) This question is unrelated to the data above. Derive the expression for cov(b0, b1) in terms of some, or all, Xi, Yi, β0, β1, σ2. Simplify as much as you can.
-Question 7 (15 points). Suppose we are given n data points {(X1, Y1, Z1),(X2, Y2, Z2), . . . ,(Xn, Yn, Zn)}. We are interested in fitting the linear regression model
-Yi = α + βXi + εi and Zi = γ + βXi + ηi
-for i = 1, 2, . . . , n, where εi and ηi are independent random variables N(0, σ2). Note that the slope β in both equations is the same.
-(a) Derive the least squares estimates of α, β and γ.
-Hint: Write a single least squares objective function as a function of α, β, γ and proceed, i.e.
-Q(α, β, γ) = . . .
-(b) What do you think should be an estimator for σ2for this model?
+Residual      standard      error:      71   . 69    on      39    degrees      of      freedom Multiple   R-squared:          0   .7682,Adjusted      R-squared:            0   .7385   F-statistic:      25.85      on      5      and      39   DF,         p-value:      0   . 0000
+How   many   data   points   there?    How   many   parameters   are   in   the   model?   I.e.,   find   n   and p.
 
 
+(c)   Based   on this   output,   state   hypotheses   and   conduct   a   level   α   = 0.05 test   of whether or not the interaction   term   between   asthma   and   the   square   of   age   is   associated   with   the   response.   Find   the   t*    and   the   p-value.    Deter-   mine   your   conclusion   based   on   this   data.
+(d)   Based   on   this   output,   find   the   interval   where   the   blood   pressure   in   a   35-   year-old   asthmatic   would   be   with   95%   probability.
+(e)   Based on the R output, can you conclude that the only appropriate model   for   the   data   is
+Y = β4X1X2   +   β5X1(2)X2   +   ε   ?
+Explain   why   yes,   or   why   no.
+(f)   Do   you   think   there   is   evidence   of   multicollinearity   in   the   provided   out-   put?   Briefly   explain   why   yes   or   why   no.
+
+Question   5.   Consider the following data seton the calories   (Ci   )   and   sodium   level   (Si   )   of   several   types   (Ti   )   of   sausages.    The   categorical    (or   qualitative)   variable   type    (Ti   )   can   take   on   three   values:       “chicken”,    “beef”    or    “pork”   .   First   six   rows   of the   dataset   is   as   follows.   There   are   n   observations   in   total.
+type,   Ti
+calories   Ci
+sodium   Si
+pork
+172
+496
+chicken
+87
+359
+chicken
+143
+581
+chicken
+132
+375
+pork
+190
+545
+pork
+173
+458
+Consider   the   following   regression   output.
+g1      <-    lm(calories      ~    sodium,    sausage)
+g2      <-      lm(calories    ~      sodium      +      factor(type),      sausage)
+#factor(type)      is   the   way   R   treats      qualitative    (or      categorical)   variables
+summary(g1)$r   . squared
+##      [1]    0   . 218
+summary(g2)$r   . squared   ##      [1]    0   .793   
 
 
+
+
+Model   g1   is   obtained   by   fitting   the   linear   model
+g1:                     Ci   = β0   + β1   Si   +   εi
+to   the   data.
+Model   g2   is   obtained   by   fitting   the   linear   model
+g2:                     Ci   = β0   + β1   Si   + β2Xi2   +   β3Xi3   +   εi
+to   the   data.
+From   the   above   output,   answer   the   following   questions.
+(a)   Explicitly   define   Xi2    and   Xi3   .   Hint:   dummy   coding.
+(b)   Write   down the first   six rows of   the   two   design   matrices   X   for   models   g1   and   g2   based   on   the   provided   data   table.
+(c)   The   above   plot   displays   the   calories   count   against   the   sodium   predictor variable   for   the   model   g1.    The   square,   triangle,   and   circle   points   corre-   spond   to   sausages   of   type    “chicken”,    “beef”,    and    “pork”,    respectively.   Explain   why   based   only   on   this   plot   we   can   suggest   that   model   g2   should   be   preferred   over   model   g1?
+(d)   Explain   why   this   plot   also   suggests   that   the   following   model
+Ci   = β0   +   β1   Si   +   β2Xi2   +   β3Xi3   +   β4Xi2Si   +   β5Xi3Si   +   εi
+is   unnecessarily   complicated   for   this   dataset.
+(e)   Consider   model   g2.    Assuming   independent   normal   errors   and   constant   variances,   write   down   the   null   and   alternative   hypotheses   that   the   type   of sausage   is   not   associated   with   calories,   in the   presence   of other vari-   ables   in   the   model   g2.
+
+
+(f)   Continuing   part   (e).   Write   down   the   exact   form   of the   test   statistic   and   specify   the   distribution   of this   test   statistic   under   the   null   hypothesis   of   no   association   between   type   of   sausage   and   calories   (in   the   presence   of   other   variables).    Note   that   the   test   statistic   can   be   computed   from   the   quantities   given   above.    Your   final   answer   will   depend   only   on   n.    Hint:   General   Linear   Test   and   R2    =   1 − SSE/SSTO.
 
          
 加QQ：99515681  WX：codinghelp  Email: 99515681@qq.com
